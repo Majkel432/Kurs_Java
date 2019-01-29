@@ -4,12 +4,8 @@ public class MyFirstProgram {
     public static void main(String[] args) {
         System.out.println("Hello World!");
         
-        Point p1 = new Point ();
-        p1.x = 2;
-        p1.y = 5;
-        Point p2 = new Point ();
-        p2.x = 5;
-        p2.y = 9;
+        Point p1 = new Point (2.0,5.0);
+        Point p2 = new Point (5.0,9.0);
     
         System.out.println(distance(p1,p2));
     }
