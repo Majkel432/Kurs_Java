@@ -5,7 +5,8 @@ import org.testng.annotations.Test;
 
 import static ru.stqa.pft.sandbox.MyFirstProgram.distance;
 
-public class PointTests {
+public class PointTests
+{
   @Test
   public void TestDistance ()
   
@@ -16,7 +17,5 @@ public class PointTests {
     Assert.assertEquals(distance (p1,p2), 5.0);
      
   }
-
 }
-
 
