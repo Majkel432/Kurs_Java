@@ -9,9 +9,7 @@ import java.util.concurrent.TimeUnit;
 
 public class TestBase {
   
-  
-  private WebDriver wd;
-  private WebDriver wd;
+  public WebDriver wd;
   
   @BeforeMethod(alwaysRun = true)
   public void setUp() throws Exception {
@@ -21,7 +19,7 @@ public class TestBase {
     login("admin", "secret");
   }
   
-  private void login(String username, String password) {
+  public void login(String username, String password) {
     wd.findElement(By.name("user")).clear();
     wd.findElement(By.name("user")).sendKeys(username);
     wd.findElement(By.name("pass")).clear();
@@ -29,17 +27,6 @@ public class TestBase {
     wd.findElement(By.id("LoginForm")).submit();
   }
   
-  @BeforeMethod(alwaysRun = true)
-  public void setUp() throws Exception {
-    wd = new FirefoxDriver();
-    wd.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-    wd.get("http://localhost/addressbook/group.php");
-    Login("admin", "secret");
-  }
-  
-  protected void Logout() {
-    wd.findElement(By.linkText("Logout")).click();
-  }
   
   protected void returnGroupPage() {
     wd.findElement(By.linkText("group page")).click();
@@ -105,11 +92,6 @@ public class TestBase {
     wd.findElement(By.id("LoginForm")).submit();
   }
   
-  @AfterMethod(alwaysRun = true)
-  public void tearDown() throws Exception {
-    wd.quit();
-   
-  }
   
   @AfterMethod(alwaysRun = true)
   public void tearDown() throws Exception {
@@ -122,15 +104,6 @@ public class TestBase {
       wd.findElement(by);
       return true;
     } catch (NoSuchElementException e) {
-      return false;
-    }
-  }
-  
-  private boolean isAlertPresent() {
-    try {
-      wd.switchTo().alert();
-      return true;
-    } catch (NoAlertPresentException e) {
       return false;
     }
   }
@@ -150,6 +123,7 @@ public class TestBase {
     } catch (NoAlertPresentException e) {
       return false;
     }
+  
   }
 }
 
