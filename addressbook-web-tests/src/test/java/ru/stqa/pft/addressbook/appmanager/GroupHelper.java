@@ -9,7 +9,6 @@ public class GroupHelper extends HelperBase
   
   public GroupHelper(WebDriver wd) {
     super(wd);
-    
   }
   
   public void returnGroupPage() {
