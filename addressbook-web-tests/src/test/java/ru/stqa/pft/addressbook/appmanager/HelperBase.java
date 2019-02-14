@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import ru.stqa.pft.addressbook.model.ContactData;
 
 public class HelperBase
 {
@@ -49,4 +50,5 @@ public class HelperBase
       return false;
     }
   }
+  
 }
