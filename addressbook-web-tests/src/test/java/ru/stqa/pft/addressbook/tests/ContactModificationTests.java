@@ -14,8 +14,8 @@ public class ContactModificationTests extends TestBase
     {
       app.getContactHelper().createContact(new ContactData("Jan", "Nowak", "example@poczta.fm", "987654321", "test1"));
     }
-    app.getContactHelper().InitContactModification();
-    app.getContactHelper().fillContactForm(new ContactData("Jan", "Nowak", "example@poczta.fm", "987654321", null), false);
+    app.getContactHelper().InitContactModification(before - 1);
+    app.getContactHelper().fillContactForm(new ContactData("Jan", "Nowak", "example@poczta.fm", "98765421", null), false);
     app.getContactHelper().SubmitContactModification();
     app.getNavigationHelper().gotoHomePage();
     int after = app.getContactHelper().getContactCount();
