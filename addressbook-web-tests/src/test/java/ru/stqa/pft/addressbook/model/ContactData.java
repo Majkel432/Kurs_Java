@@ -1,8 +1,10 @@
 package ru.stqa.pft.addressbook.model;
 
+
 import java.util.Objects;
 
 public class ContactData {
+  private int id;
   private final String firstname;
   private final String lastname;
   private final String email;
@@ -10,6 +12,7 @@ public class ContactData {
   private String group;
   
   public ContactData(String firstname, String lastname, String email, String home, String group) {
+    this.id = 0;
     this.firstname = firstname;
     this.lastname = lastname;
     this.email = email;
@@ -17,10 +20,28 @@ public class ContactData {
     this.group = group;
   }
   
+  public ContactData(int id, String firstname, String lastname, String email, String home, String group) {
+    this.id = id;
+    this.firstname = firstname;
+    this.lastname = lastname;
+    this.email = email;
+    this.home = home;
+    this.group = group;
+  }
+  
+  public int getId() {
+    return id;
+  }
+  
+  public void setId(int id) {
+    this.id = id;
+  }
+  
   public String getFirstname() {
     return firstname;
   }
   
+
   public String getLastname() {
     return lastname;
   }
@@ -40,11 +61,9 @@ public class ContactData {
   @Override
   public String toString() {
     return "ContactData{" +
-            "firstname='" + firstname + '\'' +
+            "id='" + id + '\'' +
+            ", firstname='" + firstname + '\'' +
             ", lastname='" + lastname + '\'' +
-            ", email='" + email + '\'' +
-            ", home='" + home + '\'' +
-            ", group='" + group + '\'' +
             '}';
   }
   
@@ -53,15 +72,13 @@ public class ContactData {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     ContactData that = (ContactData) o;
-    return Objects.equals(firstname, that.firstname) &&
-            Objects.equals(lastname, that.lastname) &&
-            Objects.equals(email, that.email) &&
-            Objects.equals(home, that.home) &&
-            Objects.equals(group, that.group);
+    return id == that.id &&
+            Objects.equals(firstname, that.firstname) &&
+            Objects.equals(lastname, that.lastname);
   }
   
   @Override
   public int hashCode() {
-    return Objects.hash(firstname, lastname, email, home, group);
+    return Objects.hash(id, firstname, lastname);
   }
 }
