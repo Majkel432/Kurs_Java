@@ -63,7 +63,15 @@ public class ContactHelper extends HelperBase {
     initContactCreation();
     fillContactForm(contact, true);
     submitContactCreation();
+    gotoHomePage();
     
+  }
+  
+  public void modifyContact(int index, ContactData contact) {
+    InitContactModification(index);
+    fillContactForm(contact, false);
+    SubmitContactModification();
+    gotoHomePage();
   }
   
   private void gotoHomePage() {
