@@ -9,11 +9,11 @@ import java.util.List;
 public class AddContactTests extends TestBase {
   
   
-  @Test (enabled = false)
+  @Test
   public void AddContactTest() throws Exception {
     
     List<ContactData> before = app.contact().list();
-    ContactData contact = new ContactData("Krzysztof", "Nowak", "example@poczta.fm", "987654321", "test1");
+    ContactData contact = new ContactData().withFirstname("Krzysztof").withLastname("Derek").withEmail("krzysztof.derek@interia.pl").withHome("123456789").withGroup("test1");
     app.contact().create(contact);
     List<ContactData> after = app.contact().list();
     Assert.assertEquals(after.size(), before.size() + 1);

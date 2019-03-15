@@ -9,11 +9,11 @@ import java.util.List;
 public class GroupCreationTests extends TestBase {
   
   
-  @Test
+  @Test 
   public void testGroupCreation() throws Exception {
     app.goTo().groupPage();
     List <GroupData> before = app.group().list();
-    GroupData group = new GroupData("test2", null, null);
+    GroupData group = new GroupData().withName("test2");
     app.group().create(group);
     List <GroupData> after = app.group().list();
     
