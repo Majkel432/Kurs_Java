@@ -20,7 +20,6 @@ public class ContactAddressTests extends TestBase {
     }
   }
   
-  
   @Test
   public void testContactAdresses ()
   {

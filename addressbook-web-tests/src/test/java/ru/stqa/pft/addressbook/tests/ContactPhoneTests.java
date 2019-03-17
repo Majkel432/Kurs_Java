@@ -22,7 +22,7 @@ public class ContactPhoneTests extends TestBase {
     app.goTo().homePage();
     if(app.contact().all().size() == 0)
     {
-      app.contact().create(new ContactData().withFirstname("Jan").withLastname("Nowak").withAddress("ul.Korfantego 2/4 50-345 Kalisz").withHomePhone("111").withMobilePhone("222").withWorkPhone("333").withEmail("jan.nowak@interis.pl").withGroup("test1"));
+      app.contact().create(new ContactData().withFirstname("Jan").withLastname("Nowak").withAddress("ul.Korfantego 2/4 50-345 Kalisz").withHomePhone("111").withMobilePhone("222").withWorkPhone("333").withAllEmails("jan.nowak@interis.pl").withGroup("test1"));
       app.goTo().homePage();
     }
   }
