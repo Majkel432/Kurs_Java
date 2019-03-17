@@ -14,6 +14,7 @@ public class ContactData {
   private String mobilePhone;
   private String workPhone;
   private String group;
+  private String address;
   
   public int getId() {
     return id;
@@ -59,6 +60,17 @@ public class ContactData {
   
   public ContactData withWorkPhone(String workPhone) {
     this.workPhone = workPhone;
+    return this;
+  }
+  
+  public String getAddress ()
+  {
+    return address;
+  }
+  
+  public ContactData withAddress (String address)
+  {
+    this.address = address;
     return this;
   }
   
