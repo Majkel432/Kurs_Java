@@ -6,6 +6,8 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import ru.stqa.pft.addressbook.model.ContactData;
 
+import java.io.File;
+
 public class HelperBase
 {
   
@@ -18,7 +20,7 @@ public class HelperBase
   protected void click(By locator) {
     wd.findElement(locator).click();
   }
-  
+
   protected void type(By locator, String text) {
     click(locator);
     if (text != null) {
@@ -29,6 +31,12 @@ public class HelperBase
       }
     }
   }
+  protected void attach (By locator, File file) {
+    if (file != null) {
+        wd.findElement(locator).sendKeys(file.getAbsolutePath());
+      }
+    }
+  
   public boolean isAlertPresent ()
   {
     try {
