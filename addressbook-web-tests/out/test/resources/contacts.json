@@ -1,0 +1,37 @@
+[
+  {
+    "firstname": "Majkel 0",
+    "lastname": "Sajkel 0",
+    "email": "tyu@interia.pl 0",
+    "homePhone": "123 0",
+    "address": "ul. Hugona 22/2 56-789 Brzeg 0"
+  },
+  {
+    "firstname": "Majkel 1",
+    "lastname": "Sajkel 1",
+    "email": "tyu@interia.pl 1",
+    "homePhone": "123 1",
+    "address": "ul. Hugona 22/2 56-789 Brzeg 1"
+  },
+  {
+    "firstname": "Majkel 2",
+    "lastname": "Sajkel 2",
+    "email": "tyu@interia.pl 2",
+    "homePhone": "123 2",
+    "address": "ul. Hugona 22/2 56-789 Brzeg 2"
+  },
+  {
+    "firstname": "Majkel 3",
+    "lastname": "Sajkel 3",
+    "email": "tyu@interia.pl 3",
+    "homePhone": "123 3",
+    "address": "ul. Hugona 22/2 56-789 Brzeg 3"
+  },
+  {
+    "firstname": "Majkel 4",
+    "lastname": "Sajkel 4",
+    "email": "tyu@interia.pl 4",
+    "homePhone": "123 4",
+    "address": "ul. Hugona 22/2 56-789 Brzeg 4"
+  }
+]
