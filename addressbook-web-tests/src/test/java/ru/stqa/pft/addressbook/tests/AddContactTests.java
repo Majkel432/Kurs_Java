@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.Contacts;
 
-import java.io.File;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -15,12 +15,16 @@ import static org.hamcrest.MatcherAssert.*;
 public class AddContactTests extends TestBase {
   
   @DataProvider
-  public Iterator<Object[]> validContacts ()
-  {
+  public Iterator<Object[]> validContacts () throws IOException {
     List<Object[]> list = new ArrayList<Object[]>();
-    list.add(new Object[] {new ContactData().withFirstname("firstname1").withLastname("lastname1").withGroup("test1")});
-    list.add(new Object[] {new ContactData().withFirstname("firstname2").withLastname("lastname2").withGroup("test2")});
-    list.add(new Object[] {new ContactData().withFirstname("firstname3").withLastname("lastname3").withGroup("test3")});
+    BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resources/contacts.csv")));
+    String line = reader.readLine();
+    while (line != null)
+    {
+      String[] split = line.split(";");
+      list.add(new Object[]{new ContactData().withFirstname(split[0]).withLastname(split[1]).withEmail(split[2]).withAddress(split[3]).withHomePhone(split[4])});
+      line = reader.readLine();
+    }
     return list.iterator();
   }
   
