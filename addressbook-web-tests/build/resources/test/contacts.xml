@@ -1,0 +1,37 @@
+<list>
+  <contact>
+    <firstname>Majkel 0</firstname>
+    <lastname>Sajkel 0</lastname>
+    <email>tyu@interia.pl 0</email>
+    <homePhone>123 0</homePhone>
+    <address>ul. Hugona 22/2 56-789 Brzeg 0</address>
+  </contact>
+  <contact>
+    <firstname>Majkel 1</firstname>
+    <lastname>Sajkel 1</lastname>
+    <email>tyu@interia.pl 1</email>
+    <homePhone>123 1</homePhone>
+    <address>ul. Hugona 22/2 56-789 Brzeg 1</address>
+  </contact>
+  <contact>
+    <firstname>Majkel 2</firstname>
+    <lastname>Sajkel 2</lastname>
+    <email>tyu@interia.pl 2</email>
+    <homePhone>123 2</homePhone>
+    <address>ul. Hugona 22/2 56-789 Brzeg 2</address>
+  </contact>
+  <contact>
+    <firstname>Majkel 3</firstname>
+    <lastname>Sajkel 3</lastname>
+    <email>tyu@interia.pl 3</email>
+    <homePhone>123 3</homePhone>
+    <address>ul. Hugona 22/2 56-789 Brzeg 3</address>
+  </contact>
+  <contact>
+    <firstname>Majkel 4</firstname>
+    <lastname>Sajkel 4</lastname>
+    <email>tyu@interia.pl 4</email>
+    <homePhone>123 4</homePhone>
+    <address>ul. Hugona 22/2 56-789 Brzeg 4</address>
+  </contact>
+</list>

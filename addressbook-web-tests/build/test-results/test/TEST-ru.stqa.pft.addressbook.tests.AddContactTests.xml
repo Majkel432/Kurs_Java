@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.stqa.pft.addressbook.tests.AddContactTests" tests="6" skipped="0" failures="0" errors="0" timestamp="2019-03-18T20:08:00" hostname="Michał-Komputer" time="111.161">
+  <properties/>
+  <testcase name="AddBadContactTest" classname="ru.stqa.pft.addressbook.tests.AddContactTests" time="34.359"/>
+  <testcase name="AddContactTest[0](ContactData{firstname='Majkel 0', lastname='Sajkel 0'})" classname="ru.stqa.pft.addressbook.tests.AddContactTests" time="14.875"/>
+  <testcase name="AddContactTest[1](ContactData{firstname='Majkel 1', lastname='Sajkel 1'})" classname="ru.stqa.pft.addressbook.tests.AddContactTests" time="15.211"/>
+  <testcase name="AddContactTest[2](ContactData{firstname='Majkel 2', lastname='Sajkel 2'})" classname="ru.stqa.pft.addressbook.tests.AddContactTests" time="15.326"/>
+  <testcase name="AddContactTest[3](ContactData{firstname='Majkel 3', lastname='Sajkel 3'})" classname="ru.stqa.pft.addressbook.tests.AddContactTests" time="15.723"/>
+  <testcase name="AddContactTest[4](ContactData{firstname='Majkel 4', lastname='Sajkel 4'})" classname="ru.stqa.pft.addressbook.tests.AddContactTests" time="15.658"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

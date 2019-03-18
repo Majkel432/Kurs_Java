@@ -57,7 +57,7 @@ public class AddContactTests extends TestBase {
   
   @Test (dataProvider = "validContactsFromJson")
   public void AddContactTest(ContactData contact) throws Exception {
-    
+      app.goTo().homePage();
       Contacts before = app.contact().all();
       File photo = new File("src/test/resources/stru.png");
       app.contact().create(contact);
@@ -68,9 +68,9 @@ public class AddContactTests extends TestBase {
     }
   @Test
   public void AddBadContactTest() throws Exception {
-    
+    app.goTo().homePage();
     Contacts before = app.contact().all();
-    ContactData contact = new ContactData().withFirstname("Krzysztof'").withLastname("Derek").withEmail("krzysztof.derek@interia.pl").withHomePhone("123456789").withGroup("test1");
+    ContactData contact = new ContactData().withFirstname("Krzysztof'");
     app.contact().create(contact);
     assertThat(app.contact().count(), equalTo(before.size()));
     Contacts after = app.contact().all();
