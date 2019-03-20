@@ -4,43 +4,85 @@ package ru.stqa.pft.addressbook.model;
 import com.google.gson.annotations.Expose;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamOmitField;
+import org.hibernate.annotations.Type;
 
+import javax.persistence.*;
 import java.io.File;
 import java.util.Objects;
 
 @XStreamAlias("contact")
 
+@Entity
+@Table(name = "addressbook")
+
 public class ContactData {
   
   @XStreamOmitField
-  
+  @Id
+  @Column(name = "id")
   private int id = Integer.MAX_VALUE;
+  
   @Expose
+  @Column(name = "firstname")
   private String firstname;
+  
   @Expose
+  @Column(name = "lastname")
   private String lastname;
+  
   @Expose
+  @Column(name = "email")
+  @Type(type = "text")
   private String email;
+  
+  @Column(name = "email2")
+  @Type(type = "text")
   private String email2;
+  
+  @Column(name = "email3")
+  @Type(type = "text")
   private String email3;
-  private String allEmails;
+  
   @Expose
+  @Column(name = "home")
+  @Type(type = "text")
   private String homePhone;
+  
+  @Column(name = "mobile")
+  @Type(type = "text")
   private String mobilePhone;
-  private String allPhones;
+  
+  @Column(name = "work")
+  @Type(type = "text")
   private String workPhone;
+  
+  @Transient
+  private String allPhones;
+  
+  @Transient
   private String group;
-  @Expose
-  private String address;
+  
+  @Transient
   private String allAddress;
-  private File photo;
+  
+  @Transient
+  private String allEmails;
+  
+  @Expose
+  @Column(name = "address")
+  @Type(type = "text")
+  private String address;
+  
+  @Column(name = "photo")
+  @Type(type = "text")
+  private String photo;
   
   public File getPhoto() {
-    return photo;
+    return new File(photo);
   }
   
   public ContactData withPhoto(File photo) {
-    this.photo = photo;
+    this.photo = photo.getPath();
     return this;
   }
   
@@ -62,15 +104,15 @@ public class ContactData {
     return this;
   }
   
-  public String getAllEmails ()
-  {
+  public String getAllEmails() {
     return allEmails;
   }
-  public ContactData withAllEmails (String allEmails)
-  {
+  
+  public ContactData withAllEmails(String allEmails) {
     this.allEmails = allEmails;
     return this;
   }
+  
   public int getId() {
     return id;
   }
@@ -79,6 +121,7 @@ public class ContactData {
     this.id = id;
     return this;
   }
+  
   public ContactData withFirstname(String firstname) {
     this.firstname = firstname;
     return this;
@@ -88,6 +131,7 @@ public class ContactData {
     this.lastname = lastname;
     return this;
   }
+  
   public String getEmail() {
     return email;
   }
@@ -114,6 +158,7 @@ public class ContactData {
     this.email3 = email3;
     return this;
   }
+  
   public String getHomePhone() {
     return homePhone;
   }
@@ -122,6 +167,7 @@ public class ContactData {
     this.homePhone = homePhone;
     return this;
   }
+  
   public String getMobilePhone() {
     return mobilePhone;
   }
@@ -130,6 +176,7 @@ public class ContactData {
     this.mobilePhone = mobilePhone;
     return this;
   }
+  
   public String getWorkPhone() {
     return workPhone;
   }
@@ -139,13 +186,11 @@ public class ContactData {
     return this;
   }
   
-  public String getAddress ()
-  {
+  public String getAddress() {
     return address;
   }
   
-  public ContactData withAddress (String address)
-  {
+  public ContactData withAddress(String address) {
     this.address = address;
     return this;
   }
@@ -158,7 +203,7 @@ public class ContactData {
   public String getFirstname() {
     return firstname;
   }
-
+  
   public String getLastname() {
     return lastname;
   }
@@ -182,12 +227,13 @@ public class ContactData {
     return Objects.hash(id, firstname, lastname);
   }
   
+  
   @Override
   public String toString() {
     return "ContactData{" +
-            "firstname='" + firstname + '\'' +
+            "id=" + id +
+            ", firstname='" + firstname + '\'' +
             ", lastname='" + lastname + '\'' +
             '}';
   }
-  
 }
