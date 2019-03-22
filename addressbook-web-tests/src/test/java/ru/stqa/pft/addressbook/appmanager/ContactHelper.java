@@ -2,6 +2,7 @@ package ru.stqa.pft.addressbook.appmanager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.Contacts;
@@ -58,10 +59,24 @@ public class ContactHelper extends HelperBase {
     wd.findElement(By.cssSelector("input[value = '" + id + "']")).click();
   }
   
+  
+  
   public void AddContactToGroup (ContactData contact)
   {
+   
     SelectContact(contact.getId());
+    ChooseGroupAndAddContact ();
     
+  }
+  
+  public void ChooseGroupAndAddContact ()
+  {
+    
+    wd.findElement(By.name("to_group")).click();
+    new Select(wd.findElement(By.name("to_group"))).selectByVisibleText("test 2");
+    wd.findElement(By.xpath("(//option[@value='71'])[2]")).click();
+    wd.findElement(By.name("add")).click();
+    wd.findElement(By.linkText("group page \"test 2\"")).click();
   }
   
   
@@ -139,6 +154,15 @@ public class ContactHelper extends HelperBase {
     return wd.findElements(By.name("selected[]")).size();
   }
   
+  public void cuurentGroupPage()
+  {
+    wd.findElement(By.name("group")).click();
+    new Select(wd.findElement(By.name("group"))).selectByVisibleText("test 1");
+    wd.findElement(By.xpath("//option[@value='65']")).click();
+    new Select(wd.findElement(By.name("group"))).selectByVisibleText("[all]");
+  }
+  
+  
   public ContactData infoFromEditForm(ContactData contact) {
     InitContactModificationById(contact.getId());
     String firstname = wd.findElement(By.name("firstname")).getAttribute("value");
@@ -156,3 +180,4 @@ public class ContactHelper extends HelperBase {
     
   }
 }
+

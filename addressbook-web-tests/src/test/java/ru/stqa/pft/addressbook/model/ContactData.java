@@ -17,6 +17,7 @@ import java.util.Set;
 @Entity
 @Table(name = "addressbook")
 
+
 public class ContactData {
   
   @XStreamOmitField

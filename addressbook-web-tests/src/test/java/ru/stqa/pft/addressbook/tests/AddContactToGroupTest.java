@@ -5,6 +5,9 @@ import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.Contacts;
 
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.MatcherAssert.assertThat;
+
 public class AddContactToGroupTest extends TestBase {
   
   @BeforeMethod
@@ -20,8 +23,17 @@ public class AddContactToGroupTest extends TestBase {
   @Test
   public void AddContactToGroupTest ()
   {
-    app.goTo().homePage();
-    Contacts before = app.db().contacts();
+    
+    app.contact().cuurentGroupPage();
+    Contacts before = app.db().contacts2();
+    ContactData contactAddedToGroup = before.iterator().next();
+    app.contact().AddContactToGroup(contactAddedToGroup);
+   
+    assertThat(app.contact().count(), equalTo(before.size()+1));
+    Contacts after = app.db().contacts2();
+    //assertThat(after, equalTo(before.without(contactAddedToGroup)));
+  
+    
   }
   
 }
