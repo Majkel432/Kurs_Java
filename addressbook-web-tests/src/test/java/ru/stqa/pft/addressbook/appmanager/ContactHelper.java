@@ -2,6 +2,7 @@ package ru.stqa.pft.addressbook.appmanager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.Contacts;
 import java.util.List;
@@ -29,11 +30,14 @@ public class ContactHelper extends HelperBase {
     type(By.name("address"),contactData.getAddress());
     attach(By.name("photo"), contactData.getPhoto());
     
-   /* if (creation) {
+    if (creation) {
+    
+    /*
       new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
-    } else {
+      */
+    }else {
       Assert.assertFalse(isElementPresent(By.name("new_group")));
-    }*/
+    }
   }
   
   public void initContactCreation() {
@@ -48,6 +52,18 @@ public class ContactHelper extends HelperBase {
     wd.switchTo().alert().accept();
     
   }
+  
+  public void SelectContact (int id)
+  {
+    wd.findElement(By.cssSelector("input[value = '" + id + "']")).click();
+  }
+  
+  public void AddContactToGroup (ContactData contact)
+  {
+    SelectContact(contact.getId());
+    
+  }
+  
   
   public void InitContactModificationById(int id) {
     
