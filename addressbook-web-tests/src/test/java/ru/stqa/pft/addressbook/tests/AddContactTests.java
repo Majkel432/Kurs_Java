@@ -64,6 +64,7 @@ public class AddContactTests extends TestBase {
       Contacts after = app.db().contacts();
   
       assertThat(after, equalTo(before.withAdded(contact.withId(after.stream().mapToInt((g) -> g.getId()).max().getAsInt()))));
+      verifyContactListInUI();
     }
   @Test
   public void AddBadContactTest() throws Exception {
@@ -75,7 +76,7 @@ public class AddContactTests extends TestBase {
     Contacts after = app.db().contacts();
     
     assertThat(after, equalTo(before));
-    
+    verifyContactListInUI();
   }
   
 }
