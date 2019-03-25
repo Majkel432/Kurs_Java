@@ -1,4 +1,4 @@
-package ru.stqa.pft.mantis.tests;
+package ru.stqa.pft.mantis.appmanager;
 
 import org.apache.commons.net.ftp.FTPClient;
 import ru.stqa.pft.mantis.appmanager.ApplicationManager;
