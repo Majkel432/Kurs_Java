@@ -22,12 +22,12 @@ public class ChangePasswordTests extends TestBase {
   
   @Test
   public void testChangePassword () throws IOException, MessagingException {
-    String user = "administrator";
-    String password = "root";
+    String admin = "administrator";
+    String admin_password = "root";
     String user1 = "user1";
     String password1 ="password";
     String email1 = "user1@localhost.localdomain";
-    app.changePassword().start(user, password);
+    app.changePassword().start(admin, admin_password);
     List<MailMessage> mailMessages = app.mail().waitForMail(1, 10000);
     String confirmationLink = findConfirmationLink(mailMessages, email1);
     app.changePassword().stop(confirmationLink, password1);
