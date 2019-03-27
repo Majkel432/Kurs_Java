@@ -116,6 +116,10 @@ public class ApplicationManager {
   }
   
   public DbHelper db() {
+    
+    if(dbHelper == null) {
+      dbHelper = new DbHelper(this);
+    }
     return dbHelper;
   }
   

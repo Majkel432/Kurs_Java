@@ -15,14 +15,15 @@ import java.util.Objects;
   public class UserData {
     @Id
     @Column(name = "id")
-    private int id = Integer.MAX_VALUE;
+    @Type(type = "int")
+    private int id;
     
     @Column(name = "username")
-    @Type(type = "text")
+    @Type(type = "string")
     private String username;
     
     @Column(name = "email")
-    @Type(type = "text")
+    @Type(type = "string")
     private String email;
     
     
