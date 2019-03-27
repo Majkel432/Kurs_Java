@@ -115,12 +115,13 @@ public class ApplicationManager {
     return soapHelper;
   }
   
-  public DbHelper db() {
-    
-    if(dbHelper == null) {
-      dbHelper = new DbHelper(this);
-    }
-    return dbHelper;
-  }
+ public DbHelper db ()
+ {
+   if(dbHelper == null)
+   {
+     dbHelper = new DbHelper ();
+   }
+   return dbHelper;
+ }
   
 }
