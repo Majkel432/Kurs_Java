@@ -43,7 +43,7 @@ public class Issue {
       this.state_name = state_name;
       return this;
     }
-    
+  
   
   @Override
   public boolean equals(Object o) {
@@ -52,16 +52,13 @@ public class Issue {
     Issue issue = (Issue) o;
     return id == issue.id &&
             Objects.equals(subject, issue.subject) &&
-            Objects.equals(description, issue.description);
+            Objects.equals(description, issue.description) &&
+            Objects.equals(state_name, issue.state_name);
   }
   
   @Override
   public int hashCode() {
-    int result = id;
-    result = 31 * result + (subject != null ? subject.hashCode() : 0);
-    result = 31 * result + (description != null ? description.hashCode() : 0);
-    return result;
-    
+    return Objects.hash(id, subject, description, state_name);
   }
   
   @Override
@@ -74,5 +71,5 @@ public class Issue {
             '}';
   }
   
-
+  
 }

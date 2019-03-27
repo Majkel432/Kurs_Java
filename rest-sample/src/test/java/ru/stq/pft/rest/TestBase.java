@@ -20,7 +20,7 @@ import java.util.Set;
       while (iterator.hasNext()) {
         Issue issue = iterator.next();
         if (issue.getId() == issueId) {
-          if (issue.getState_name().equals("resolved")) {
+          if (issue.getState_name().equals("resolved")||issue.getState_name().equals("closed")) {
             return false;
           } else return true;
         }
@@ -29,7 +29,7 @@ import java.util.Set;
     }
     
     private Set<Issue> getIssues() throws IOException {
-      RestAssured.authentication = RestAssured.basic("LSGjeU4yP1X493ud1hNniA==", "");
+      RestAssured.authentication = RestAssured.basic("28accbe43ea112d9feb328d2c00b3eed", "");
       String json = RestAssured.get("http://demo.bugify.com/api/issues.json").asString();
       JsonElement parsed = new JsonParser().parse(json);
       JsonElement issues = parsed.getAsJsonObject().get("issues");
