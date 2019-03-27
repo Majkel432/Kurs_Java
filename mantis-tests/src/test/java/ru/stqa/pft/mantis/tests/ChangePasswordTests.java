@@ -22,8 +22,8 @@ public class ChangePasswordTests extends TestBase {
   
   @Test
   public void testChangePassword () throws IOException, MessagingException {
-    String admin = "administrator";
-    String admin_password = "root";
+    String admin = app.getProperty("web.adminLogin");
+    String admin_password = app.getProperty("web.adminPassword");
     String user1 = "user1";
     String password1 ="password";
     String email1 = "user1@localhost.localdomain";
