@@ -9,6 +9,7 @@ import org.testng.SkipException;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import ru.stqa.pft.mantis.appmanager.ApplicationManager;
+import ru.stqa.pft.mantis.appmanager.SoapHelper;
 import ru.stqa.pft.mantis.model.Issue;
 
 import javax.xml.rpc.ServiceException;
@@ -39,8 +40,8 @@ public class TestBase {
   
   
   public boolean isIssueOpen (int issueId) throws MalformedURLException, ServiceException, RemoteException {
-    MantisConnectPortType mc = getMantisConnect();
-  
+    SoapHelper soapHelper = new SoapHelper(app);
+    MantisConnectPortType mc = soapHelper.getMantisConnect();
     IssueData issueData = mc.mc_issue_get(app.getProperty("web.adminLogin"),
             app.getProperty("web.adminPassword"), BigInteger.valueOf(issueId));
     String status = issueData.getStatus().getName();
